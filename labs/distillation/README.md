@@ -1,4 +1,4 @@
-# A World of Tensors and Differentiable Computing
+# Knowledge Distillation
 
 [![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_distillation_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/master/labs/distillation/lab_distillation_todo.ipynb)
 
