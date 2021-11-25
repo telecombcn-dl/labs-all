@@ -1,6 +1,6 @@
 # Fighting Overfitting 
 
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_overfitting_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/master/labs/overfitting/lab_overfitting_todo.ipynb)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_overfitting_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/main/labs/overfitting/lab_overfitting_todo.ipynb)
 
 Lab created by [Santi Pascual](https://github.com/santi-pdp) and [Xavier Giro-i-Nieto](https://imatge.upc.edu/web/people/xavier-giro) for the [UPC School](https://www.talent.upc.edu/ing/estudis/formacio/curs/310400/postgrau-artificial-intelligence-deep-learning/) (2019).
 

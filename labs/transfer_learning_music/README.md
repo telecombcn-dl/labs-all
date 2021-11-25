@@ -1,6 +1,6 @@
 # Transfer Learning for Music Classification
 
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_transfer_learning_music_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/master/labs/transfer_learning_music/lab_transfer_learning_music_todo.ipynb)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_transfer_learning_music_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/main/labs/transfer_learning_music/lab_transfer_learning_music_todo.ipynb)
 
 [Original Lab](https://github.com/jordipons/sklearn-audio-transfer-learning) developed by Jordi Pons.
 

@@ -1,6 +1,6 @@
 # Image Classification with a Convolutional Neural Network
 
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_cnn_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/master/labs/cnn/lab_cnn_todo.ipynb)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_cnn_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/main/labs/cnn/lab_cnn_todo.ipynb)
 
 Notebook created in PyTorch by [Santi Pascual](https://github.com/santi-pdp) for the [UPC School](https://www.talent.upc.edu/ing/estudis/formacio/curs/310400/postgrau-artificial-intelligence-deep-learning/) (2019).
 

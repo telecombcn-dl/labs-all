@@ -1,6 +1,6 @@
 # Transfer Learning
 
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_transfer_learning_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/master/labs/transfer_learning/lab_transfer_learning_todo.ipynb)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_transfer_learning_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/main/labs/transfer_learning/lab_transfer_learning_todo.ipynb)
 
 In this session we will work with convolutional neural networks, when dealing with small datasets, which is a very usual situation, as data can be difficult to obtain in certain scenearios, specially labelled data.
 
