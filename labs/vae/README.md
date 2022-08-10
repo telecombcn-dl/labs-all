@@ -5,3 +5,5 @@
 In this colab, you're going to create your first Variational Autoencoder (VAE). Specifically, you will build and train a VAE that can generate hand-written images of digits (0-9).
 
 Notebook created in PyTorch by [Mariona Carós](https://es.linkedin.com/in/mariona-c-a7bb91105) for the [UPC School](https://www.talent.upc.edu/ing/) (2021).
+
+Minor contributions by [Gerard I. Gállego](https://www.linkedin.com/in/gerard-gallego/) and [Juan José Nieto](https://www.linkedin.com/in/juan-jose-nieto-salas/) during 2022.
