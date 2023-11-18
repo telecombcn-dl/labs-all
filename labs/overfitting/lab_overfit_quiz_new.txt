@@ -1,0 +1,106 @@
+$CATEGORY: $course$/top/Overfitting
+
+::Overfitting - 1::Mark the correct sentences\:{
+	~%50%The memorization phenomenon refers to the capacity of the network to be able to easily learn a perfect dictionary-like mapping between training samples and their targets.
+	~%-50%Reducing the network's size helps to improve the memorization capacity of the network.
+	~%50%The number of learnable parameters in a model is often referred to as the model's capacity.
+	~%-50%The number of layers in a model is often referred to as the model's capacity.
+}
+
+::Overfitting - 2:: Which of the following constructions applies the requested L2 regularization in our model?{
+	=<code>optim.Adam(bignet.parameters(), weight_decay\=0.001, lr\=hparams['learning_rate'])</code>
+	~<code>optim.Adam(bignet.parameters(), weight_decay\=0.1, lr\=hparams['learning_rate'])</code>
+	~<code>optim.Adam(bignet.parameters(), l2_reg\=0.001, lr\=hparams['learning_rate'])</code>
+	~<code>optim.Adam(bignet.parameters(), lr\=hparams['learning_rate'])</code>
+}
+
+::Overfitting - 3:: Which of the following statements is true about dropout?{
+	=The 'nn.Dropout(0.4)' layer will randomly zero out \~40% of activations during training.
+	~The 'nn.Dropout(0.4)' layer will randomly zero out \~40% of activations during test.
+	~The 'nn.Dropout(0.4)' layer will randomly zero out \~60% of activations during training.
+	~The 'nn.Dropout(0.4)' layer will randomly zero out \~60% of the activations during test.
+}
+
+::Overfitting - 4::Mark the correct sentences\:{
+	~%-33.33333%Dropout fights overfitting only if we use a validation dataset.
+	~%-33.33333%We cannot use L2 regularization and dropout at the same time.
+	~%100%In general, the more parameters a network has, the more it will overfit.
+	~%-33.33333%When the network overfits, it will perform better during validation than during training.
+}
+
+::Overfitting - 5::Which of the following statements about dropout is false?{
+=Dropout is always effective at preventing overfitting.
+~Dropout can be used to prevent overfitting in a deep learning model.
+~Dropout randomly drops out a percentage of the neurons during training.
+~Dropout can be applied to both the input and hidden layers of a model.
+}
+
+::Overfitting - 6:: Which of the following techniques can be used to detect overfitting in a deep learning model?{
+=%33.33333% Plotting the training and validation loss curves.
+~%33.33333% Comparing the training and validation accuracy.
+~%33.33333% Using a separate test set to evaluate the model's performance.
+~%-33.33333% Reduce the amount of training data.
+}
+
+::Overfitting - 7:: Which of the following is not a common technique to prevent overfitting in deep learning models?{
+=Increasing the number of layers
+~Dropout
+~Early stopping
+~L1 regularization
+}
+
+::Overfitting - 8:: Which of the following is a common technique to prevent underfitting?{
+=Adding more layers to the network .
+~Adding dropout.
+~Reducing the learning rate during training.
+~Early stopping.
+}
+
+::Overfitting - 9:: Which of the following is true about regularization?{
+=Regularization is the process of adding constraints to a model to prevent overfitting.
+~Regularization is the process of adjusting a model to get the best performance possible on the training data.
+~Regularization is the process of adjusting a model to get the best performance possible on the validation data.
+~Regularization is the process of increasing the number of parameters in a model.
+}
+
+::Overfitting - 10:: Which of the following statements about overfitting is true?{
+=Overfitting happens when the model memorizes the training data.
+~Overfitting happens when the model doesn't fit the training data well.
+~Overfitting happens when the model is too simple for the training data.
+~Overfitting happens when the model has too few parameters.
+}
+
+::Overfitting - 11:: Select the correct statements about underfitting.{
+~%50%Underfitting happens when the model doesn't fit the training data well.
+~%-50%Underfitting happens when the model fits the training data too well.
+~%-50%Underfitting happens when the model has too many parameters.
+~%50%Underfitting happens when the model is too simple for the training data.
+}
+
+::Overfitting - 12:: Which of the following is true about the relationship between a model's memorization capacity and overfitting?{
+=A model with more parameters will have more "memorization capacity."
+~A model with more parameters will have less "memorization capacity."
+~A model with fewer parameters will have more "memorization capacity."
+~A model's memorization capacity is not related to overfitting.
+}
+
+::Overfitting - 13:: Which line of code applies dropout to a PyTorch model to prevent overfitting?{
+=<code>nn.Dropout(0.5, training=True)</code>
+~<code>nn.Dropout(0.5)</code>
+~<code>nn.Drop(0.5, training=True)</code>
+~<code>nn.Drop(0.5)</code>
+}
+
+::Overfitting - 14:: Given the following training curves, which model seems to present more overfitting? <img width\="361" height\="299" border\="0" align\="bottom" src\="https://github.com/telecombcn-dl/labs-all-internal/blob/main/labs/overfitting/overfit.png" alt\="overfit.png" /><img width\="361" height\="299" border\="0" align\="bottom" src\="https://github.com/telecombcn-dl/labs-all-internal/blob/main/labs/overfitting/overfit_train.png" alt\="overfit_train.png" />{
+~Red
+~Yellow
+~Green
+=Blue
+}
+
+::Overfitting - 15:: Given the following training curves, which model seems to present more overfitting? <img width\="361" height\="299" border\="0" align\="bottom" src\="https://github.com/telecombcn-dl/labs-all-internal/blob/main/labs/overfitting/overfit_acc.png" alt\="overfit_acc.png" /><img width\="361" height\="299" border\="0" align\="bottom" src\="https://github.com/telecombcn-dl/labs-all-internal/blob/main/labs/overfitting/overfit_acc_train.png" alt\="overfit_acc_train.png" />{
+~Red
+~Yellow
+~Green
+=Blue
+}

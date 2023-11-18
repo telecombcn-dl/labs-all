@@ -1,0 +1,71 @@
+$CATEGORY: $course$/top/value
+
+::VAE - 1:: What is the main difference between an autoencoder and a variational autoencoder?{
+~%50%Autoencoders have a fixed-size latent space while variational autoencoders have a continuous latent space.
+~%50%Autoencoders are deterministic while variational autoencoders are stochastic.
+~%-50%Autoencoders are unsupervised learning models while variational autoencoders are semi-supervised.
+~%-50%Autoencoders can only be used for data compression while variational autoencoders can also be used for generative modeling.
+}
+
+::VAE - 2:: What is the role of the reparameterization trick in variational autoencoders?{
+~To approximate the posterior distribution P(Y|X) of the latent variables.
+=To enable backpropagation throught the sampling operation at the end of the encoder.
+~To reduce the number of parameters in the autoencoder.
+~To generate new samples from the latent space of the autoencoder.
+}
+
+::VAE - 3:: What is the role of the reconstruction loss term in the variational autoencoder loss function?{
+~%50%To measure the similarity between the input and output of the autoencoder.
+~%50%To measure the reconstruction error of the autoencoder.
+~%-50%To ensure that the latent variables follow a unit Gaussian distribution.
+~%-50%To minimize the number of parameters in the autoencoder.
+}
+
+::VAE - 4:: What is the effect of increasing the dimensionality of the latent space in a variational autoencoder?{
+=%33.3333%The autoencoder will have more capacity to model complex data distributions.
+~%-33.3333%The autoencoder will have less capacity to model complex data distributions.
+~%33.3333%The autoencoder will be more prone to overfitting.
+~%33.3333%The autoencoder will be able to generate more diverse samples from the learned distribution.
+}
+
+::VAE - 5:: What is the loss function of a variational autoencoder?{
+~The mean-squared error between the inputs and outputs of the autoencoder.
+~The cross-entropy loss between the inputs and outputs of the autoencoder.
+=The sum of the reconstruction loss and the Kullback-Leibler divergence between the prior and posterior distributions P(Y|X) of the latent variables.
+~The Kullback-Leibler divergence between the prior and posterior distributions P(Y|X) of the latent variables.
+}
+
+::VAE - 6:: What is the KL divergence and how do we use it in a variational autoencoder?{
+~KL divergence is a measure of the difference between two probability distributions. In a variational autoencoder, we use KL divergence to measure the difference between the learned posterior distribution P(Y|X) of the latent variables and the prior distribution P(Y) of the latent variables. The KL divergence term is added to the loss function of the autoencoder to encourage the learned distribution to be close to a unit Gaussian distribution.
+~KL divergence is a measure of the difference between two probability distributions. In a variational autoencoder, we use KL divergence to measure the difference between the learned prior distribution P(Y) of the latent variables and the true prior distribution P(Y) of the latent variables. The KL divergence term is added to the loss function of the autoencoder to ensure that the learned distribution is as close as possible to the true prior distribution P(Y).
+~KL divergence is a measure of the difference between two probability distributions. In a variational autoencoder, we use KL divergence to measure the difference between the learned posterior distribution P(Y|X) of the latent variables and the true posterior distribution P(Y|X) of the latent variables. The KL divergence term is added to the loss function of the autoencoder to ensure that the learned distribution is as close as possible to the true posterior distribution P(Y|X).
+=KL divergence is a measure of the difference between two probability distributions. In a variational autoencoder, we use KL divergence to measure the difference between the learned posterior distribution P(Y|X) of the latent variables and the prior distribution P(Y) of the latent variables. The KL divergence term is added to the loss function of the autoencoder to ensure that the learned distribution is as close as possible to the prior distribution P(Y), while still being able to accurately reconstruct the input data.
+}
+
+::VAE - 7:: What is the latent space in a variational autoencoder?{
+~%50%The latent space is a continuous distribution over the latent variables that allows for the generation of new data samples.
+~%50%The latent space is a low-dimensional representation of the input data that captures the most important features of the data.
+~%-50%The latent space is a high-dimensional representation of the input data that captures the most important features of the data.
+~%-50%The latent space is a binary code that compresses the input data into a compact representation.
+}
+
+::VAE - 8:: What is the purpose of the encoder in a variational autoencoder?{
+~To generate new samples from the latent space of the autoencoder.
+~To approximate the posterior distribution P(Y|X) of the latent variables.
+=To map the input data to a distribution over the latent variables.
+~To enable backpropagation through the stochastic layer of the encoder.
+}
+
+::VAE - 9:: What is the purpose of the decoder in a variational autoencoder?{
+~To generate new samples from the latent space of the autoencoder.
+=To map the distribution over the latent variables to a reconstruction of the input data.
+~To approximate the posterior distribution P(Y|X) of the latent variables.
+~To enable backpropagation through the stochastic layer of the encoder.
+}
+
+::VAE - 10:: What is the difference between the prior distribution P(Y) and the posterior distribution P(Y|X) in a variational autoencoder?{
+~The prior distribution P(Y) is the distribution over the input data, while the posterior distribution P(Y|X) is the distribution over the latent variables.
+~The prior distribution P(Y) is the learned distribution over the latent variables, while the posterior distribution P(Y|X) is the true distribution over the latent variables.
+=The prior distribution P(Y) is the distribution over the latent variables that we assume before seeing any input data, while the posterior distribution P(Y|X) is the distribution over the latent variables given the input data.
+~The prior distribution P(Y) is the distribution over the output data, while the posterior distribution P(Y|X) is the distribution over the input data.
+}

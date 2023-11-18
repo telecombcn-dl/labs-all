@@ -1,0 +1,120 @@
+$CATEGORY: $course$/top/Backprop
+
+::Backprop_1::Where does the result of <code>x.grad</code> come from and why does it have this value?{
+~dx/dz \= d(2x)/dx \= 2
+~dx/dz \= d(2z)/dz \= 2
+=dz/dx \= d(2x)/dx \= 2
+~dz/dx \= d(2z)/dz \= 2
+}
+
+::Backprop_2::What is the accumulated gradient on $x$ after backpropagating twice?{
+~1
+~2
+=4
+~6
+}
+
+::Backprop_3::How many trainable parameters are contained in the FC2 layer of the neural network?{
+~60
+=63
+~23
+~69
+}
+
+::Backprop_4::How many training samples are used for each update of parameters?{
+~1
+~3
+=10
+~30
+}
+
+::Backprop_5::What is the purpose of the <code>backward()</code> method in PyTorch, and how is it used in backpropagation?{
+~The <code>backward()</code> method in PyTorch is used to compute the forward pass of the neural network. It is used in backpropagation to propagate errors backwards through the layers of the network.
+=The <code>backward()</code> method in PyTorch is used to compute the gradients of the loss function with respect to the parameters of the neural network. The gradients computed are used later to update the weights and biases of the network.
+~The <code>backward()</code> method in PyTorch is used to evaluate the performance of the neural network on a given task. It is used in backpropagation to update the hyperparameters of the network.
+~The <code>backward()</code> method in PyTorch is used to initialize the weights and biases of the neural network. It is used in backpropagation to ensure that the network starts with appropriate initializations.
+}
+
+::Backprop_6::How can we compute the gradients for the parameters of a neural network in PyTorch using autograd?{
+=We can compute the gradients for the parameters of a neural network in PyTorch using the <code>backward()</code> method.
+~We can compute the gradients for the parameters of a neural network in PyTorch using the <code>optimizer.zero_grad()</code> method.
+~We can compute the gradients for the parameters of a neural network in PyTorch using the <code>gradient()</code> method.
+~We can compute the gradients for the parameters of a neural network in PyTorch using the <code>optimizer.step()</code> method.
+}
+
+::Backprop_7::When do we apply the <code>backward()</code> method when training a PyTorch model?{
+=We apply the <code>backward()</code> method after each forward pass of the neural network to compute the gradients of the loss function with respect to the parameters of the network.
+~We apply the <code>backward()</code> method before each forward pass of the neural network to set the initial values of the weights and biases.
+~We apply the <code>backward()</code> method during the forward pass of the neural network to compute the gradients of the loss function with respect to the parameters of the network.
+~We do not apply the <code>backward()</code> method when training a PyTorch model.
+}
+
+::Backprop_8::Why do we call <code>optimizer.zero_grad()</code> in the training loop?{
+=We call <code>optimizer.zero_grad()</code> in the training loop to reset the gradients to zero before computing the gradients for the current batch of training data.
+~We call <code>optimizer.zero_grad()</code> in the training loop to update the weights and biases of the neural network.
+~We call <code>optimizer.zero_grad()</code> in the training loop to initialize the weights and biases of the neural network.
+~We call <code>optimizer.zero_grad()</code> in the training loop to evaluate the performance of the neural network on a given task.
+}
+
+::Backprop_9::What is the role of the optimizer during the training loop?{
+=The optimizer is responsible for updating the model's parameters based on the gradients of the loss function with respect to those parameters.
+~The optimizer is responsible for computing the gradients of the loss function with respect to the model's parameters.
+~The optimizer is responsible for setting the initial values of the model's parameters.
+~The optimizer is responsible for evaluating the performance of the model on a given task.
+}
+
+::Backprop_10::What is the difference between the <code>loss.backward()</code> method and the <code>optimizer.step()</code> method in the training loop of a PyTorch model? Where should each method be applied?{
+~The <code>loss.backward()</code> method is responsible for updating the model's parameters based on the gradients of the loss function with respect to those parameters, while the <code>optimizer.step()</code> method is responsible for computing the gradients of the loss function with respect to the model's parameters. We apply <code>loss.backward()</code> during the optimization step of the training loop, and <code>optimizer.step()</code> during the backward pass of the training loop.
+=The <code>loss.backward()</code> method is responsible for computing the gradients of the loss function with respect to the model's parameters, while the <code>optimizer.step()</code> method is responsible for updating the model's parameters based on those gradients. We apply <code>loss.backward()</code> during the backward pass of the training loop, and <code>optimizer.step()</code> during the optimization step of the training loop.
+~The <code>loss.backward()</code> method and the <code>optimizer.step()</code> method are interchangeable and can be used interchangeably during the training loop of a PyTorch model.
+~The <code>loss.backward()</code> method and the <code>optimizer.step()</code> method are not applicable during the training loop of a PyTorch model.
+}
+
+::Backprop_11::Do we apply the <code>backward()</code> method during inference with a PyTorch model?{
+=No, we do not apply the <code>backward()</code> method during inference with a PyTorch model because we are not computing gradients or updating the parameters of the model.
+~Yes, we apply the <code>backward()</code> method during inference with a PyTorch model to compute the gradients of the loss function with respect to the model's parameters.
+~We apply the <code>backward()</code> method during inference with a PyTorch model, but only if we want to update the model's parameters based on the gradients of the loss function.
+~We apply the <code>backward()</code> method during inference with a PyTorch model, but only if we want to compute the gradients of the loss function with respect to some other variables in the model.
+}
+
+::Backprop_12::When should we use <code>torch.no_grad()</code> and how do we use it?{
+=We should use <code>torch.no_grad()</code> when we do not want to compute gradients during the forward pass of a PyTorch model, such as during inference or when evaluating the performance of the model on a validation set. We use it by wrapping the relevant code inside a with <code>torch.no_grad()</code> block.
+~We should use <code>torch.no_grad()</code> when we want to update the model's parameters based on the gradients of the loss function. We use it by calling the <code>backward()</code> method with the retain_graph=True argument.
+~We should use <code>torch.no_grad()</code> when we want to initialize the model's parameters to a specific value. We use it by setting the requires_grad attribute of the parameters to False.
+~We should use <code>torch.no_grad()</code> when we want to compute the gradients of the loss function with respect to some other variables in the model. We use it by specifying those variables as inputs to the <code>backward()</code> method.
+}
+
+::Backprop_13::Which are the benefits of the PyTorch autograd?{
+~%50%Allows for automatic computation of gradients, simplifying the implementation of backpropagation in neural networks.
+~%50%Provides a flexible and efficient platform for defining and training complex models.
+~%-50%Enables dynamic computation graphs, allowing for easy experimentation and debugging of models.
+~%-50%Allows for seamless integration with popular deep learning libraries and frameworks, such as TensorFlow and Keras. (This is incorrect, as PyTorch is not designed for seamless integration with TensorFlow and Keras.)
+}
+
+::Backprop_14::What is the purpose of the autograd package in PyTorch?{
+=To provide automatic differentiation for all operations on Tensors.
+~To simplify the creation of neural networks.
+~To improve the performance of PyTorch.
+~To visualize the dynamic computational graph.
+}
+
+::Backprop_15::What is the meaning of 'accumulated' when we refer to gradients?{
+~It means that gradients are computed backward.
+~It means that gradients are computed forward.
+=It means that gradients are summed up to the already existing ones (if any).
+~It means that gradients are averaged over the existing ones.
+}
+
+::Backprop_16::What is the purpose of the <code>backward()</code> function?{
+~To call the life saver.
+=To compute the gradients of a tensor.
+~To compute the gradients of a function.
+~To compute the gradients of a matrix.
+}
+
+::Backprop_17::What is the purpose of the describe_tensor() function?{
+~To create a tensor.
+=To explore the attributes of a tensor object.
+~To compute the gradients of a tensor.
+~To compute the gradients of a function.
+}

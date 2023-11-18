@@ -1,0 +1,148 @@
+$CATEGORY: $course$/top/CNN
+
+::CNN - 1::Which are the benefits of using CNN's? (Please note that selecting incorrect answers deducts points){
+	~%50%Models with a lot fewer parameters than if using MLPs
+	~%50%Translation invariance
+	~%-50%Rotation invariance
+	~%-50%They use handcrafted features
+}
+
+::CNN - 2:: Which of the following constructions builds a convolutional layer with 3 kernels of size 3x3, ensuring an output tensor spatial shape (dim\=2 and dim\=3) equal to the input one?{
+	=<code>nn.Conv2d(1, 3, 3, padding\=1)</code>
+	~<code>nn.Conv2d(1, 100, 3, padding\=1)</code>
+	~<code>nn.Conv2d(1, 3, 3, padding\=0)</code>
+	~<code>nn.Conv2d(1, 3, 3, padding\=3)</code>
+}
+
+::CNN - 3::Exercise 2\: How is the convolutional layer built?{
+	~<code>self.conv \= nn.Conv2d(num_inp_channels, num_out_fmaps, pool_size)</code>
+	~<code>self.conv \= nn.Conv2d(pool_size, num_inp_channels, num_out_fmaps)</code>
+	=<code>self.conv \= nn.Conv2d(num_inp_channels, num_out_fmaps, kernel_size)</code>
+	~<code>self.conv \= nn.Conv2d(kernel_size, num_inp_channels, num_out_fmaps)</code>
+}
+
+::CNN - 4:: Which of the following statements are true about the implementation of the PseudoLeNet? (Please note that selecting incorrect answers deducts points){
+	~%50%The inputs of the MLP classifier must be flattened to be vectors of size 400.
+	~%-50%The output of the MLP has 784 neurons, unrolled to make an image of shape 28x28 again.
+	~%-50%The output of the MLP has 10 neurons with a <code>Sigmoid()</code> layer.
+	~%50%The output of the MLP has 10 neurons with a <code>LogSoftmax()</code> layer.
+}
+
+::CNN - 5::Do we need to specify the input image dimensions when creating a Convolutional layer in PyTorch?{
+~Yes, input image dimensions are required to create a Convolutional layer in PyTorch.
+=No, input image dimensions are not necessary in PyTorch Convolutional layers.
+~Input image dimensions are only needed for certain types of CNN layers in PyTorch.
+~PyTorch can infer the input image dimensions automatically, so it is not always necessary to specify them manually.
+}
+
+::CNN - 6::In PyTorch, can we forward any image size through the same convolutional layer?{
+=Yes, any image size can be forwarded through the same convolutional layer in PyTorch.
+~No, image size must be specified for each individual convolutional layer in PyTorch.
+~Only certain image sizes are compatible with each convolutional layer in PyTorch.
+~PyTorch cannot be used to forward images of different sizes through the same convolutional layer.
+}
+
+::CNN - 7::What is the role of pooling layers in CNN models?{
+~To reduce the number of trainable parameters in the model.
+=To reduce the spatial dimensionality of the feature maps and extract the most important features.
+~To introduce non-linearity to the model.
+~To randomly drop out neurons in the layer to prevent overfitting.
+}
+
+::CNN - 8::How many trainable parameters does a pooling layer have?{
+=Pooling layers do not have trainable parameters.
+~Trainable parameters depend on the size of the pooling window.
+~Pooling layers have the same number of trainable parameters as the number of filters in the preceding convolutional layer.
+~Pooling layers have a fixed number of trainable parameters, regardless of the input size.
+}
+
+::CNN - 5::How can we build a MaxPool layer in PyTorch?{
+~<code>nn.MaxPool2d(image_dim\=512)</code>
+~<code>nn.MaxPool2d(image_dim\=(512,512))</code>
+=<code>nn.MaxPool2d(kernel_size\=2)</code>
+~<code>nn.MaxPool2d(padding\=1)</code>
+}
+
+::CNN - 6::How can we connect the output of a convolutional layer to a fully connected layer in a PyTorch model?{
+=We can connect the output of a convolutional layer to a fully connected layer by flattening the feature maps of each element in the batch into a vector and passing them through the fully connected layer.
+~We can connect the output of a convolutional layer to a fully connected layer by using a pooling layer to reduce the spatial dimensionality of the feature maps, and then passing the resulting feature maps through the fully connected layer.
+~We can connect the output of a convolutional layer to a fully connected layer by concatenating the feature maps along the channel dimension, and then passing the resulting feature maps through the fully connected layer.
+~We can connect the output of a convolutional layer to a fully connected layer by using a convolutional layer with a kernel size equal to the spatial dimensions of the feature maps, and then passing the resulting feature maps through the fully connected layer.
+}
+
+::CNN - 7::What is downsampling in CNN models?{
+~The process of increasing the spatial dimensions of a feature map.
+=The process of reducing the spatial dimensions of a feature map.
+~The process of increasing the number of channels in a feature map.
+~The process of reducing the number of channels in a feature map.
+}
+
+::CNN - 8::What are the advantages of using pooling in CNN models?{
+~Pooling reduces the number of trainable parameters in the model.
+~Pooling reduces the spatial dimensionality of the feature maps, making them easier to process by subsequent layers.
+~Pooling can help to prevent overfitting by reducing the complexity of the model.
+=All of the above are advantages of using pooling in CNN models.
+}
+
+::CNN - 9::What is the difference between feature maps and input images in CNN models?{
+=Feature maps are the intermediate hidden activations of a CNN, while input images are the images that are fed into the model.
+~Feature maps are the images that are fed into the model, while input images are the images that are used to train the model.
+~Feature maps are the result of applying filters to the input images, while input images are the original images that the model is trying to classify.
+~Feature maps and input images are the same thing in CNN models.
+}
+
+::CNN - 10::What is the relationship between the receptive field and the number of layers in a CNN model?{
+~The receptive field decreases as the number of layers increases.
+=The receptive field increases as the number of layers increases.
+~The receptive field is not affected by the number of layers in the model.
+~The receptive field is proportional to the number of filters in each layer, not the number of layers in the model.
+}
+
+::CNN - 11::What is the purpose of the <code>.reshape()</code> operator in the PseudoLeNet model?{
+=To change the shape of the feature maps coming out of the second ConvBlock to a compatible shape, such a one dimensional vector per element in the batch, for the MLP classifier.
+~To change the shape of the input images to a compatible shape for the ConvBlocks.
+~To change the shape of the output predictions to a compatible shape for the target labels.
+~To change the shape of the weights and biases in the model to a compatible shape for the optimization algorithm.
+}
+
+::CNN - 12::What is the purpose of the ReLU activation function in the PseudoLeNet model?{
+=To introduce non-linearity to the model and make it capable of learning complex patterns in the input images.
+~To reduce the dimensionality of the feature maps and make them easier to process by subsequent layers.
+~To randomly drop out neurons in the layer to prevent overfitting.
+~To normalize the feature maps and improve the stability and convergence of the optimization algorithm.
+}
+
+::CNN - 13::What is the purpose of the softmax activation function in the PseudoLeNet model?{
+~To introduce non-linearity to the model and make it capable of learning complex patterns in the input images.
+~To reduce the dimensionality of the feature maps and make them easier to process by subsequent layers.
+~To randomly drop out neurons in the layer to prevent overfitting.
+=To normalize the output predictions and produce probabilities for each class.
+}
+
+::CNN - 14::What is the output shape of a convolutional layer with 32 filters, a kernel size of 3x3, and no padding when applied to an input tensor of shape (64, 64, 3)?{
+~(64, 64, 32)
+= (62, 62, 32)
+~(32, 32, 3)
+~(32, 32, 32)
+}
+
+::CNN - 15::What is the output shape of a max pooling layer with a kernel size of 2x2 when applied to an input tensor of shape (32, 32, 64)?{
+= (16, 16, 64)
+~(32, 32, 32)
+~(31, 31, 64)
+~(64, 64, 64)
+}
+
+::CNN - 16::What is the output shape of a max pooling layer with a kernel size of 3x3 when applied to an input tensor of shape (256, 256, 3)?{
+=(85, 85, 3)
+~(254, 254, 3)
+~(85, 85, 9)
+~(84, 84, 3)
+}
+
+::CNN - 17::What is the output shape of a convolutional layer with 8 filters, a kernel size of 7x7, and no padding when applied to an input tensor of shape (512, 512, 1)?{
+~(512, 512, 8)
+=(510, 510, 8)
+~(256, 256, 8)
+~(256, 256, 8)
+}

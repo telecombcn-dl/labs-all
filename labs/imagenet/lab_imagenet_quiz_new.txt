@@ -1,0 +1,70 @@
+$CATEGORY: $course$/top/ImageNet
+
+::ImageNet - 1::What loss function should be use to train on ImageNet?{
+	=<code>nn.CrossEntropyLoss()</code>
+	~<code>nn.MSELoss()</code>
+	~<code>nn.L1Loss()</code>
+}
+
+::ImageNet - 2::During evaluation, what transformations should be done to the image if we want to use a network pretrained on ImageNet in PyTorch?{
+	~During evaluation you shouldn't do transformations.
+	=Resizing to 256px, center crop of 224px, converting to tensor and normalizing pixel values to ImageNet values.
+	~Resizing to 256px, center crop of 224px, converting to tensor and normalizing pixel values between 0 and 1.
+	~Doing a crop of 224px, randomly flipping horizontally, converting to tensor and normalizing pixel values to ImageNet values.
+}
+
+::ImageNet - 3::Which evaluation metrics do we generally track for the task of image classification on ImageNet?{
+	~Mean Squared Error
+	=Top-1 and Top-5 accuracy
+	~Top-1 Cross-entropy loss
+	~Learning rate
+}
+
+::ImageNet - 4::What steps are done to the PIL image before feeding it through the network at inference time?{
+	=Doing the evaluation transformations, Moving the image to GPU, Adding a batch dimension with length 1
+	~Doing data augmentation, Doing the evaluation transformations, Adding a batch dimension with length 1
+	~Doing the evaluation transformations, Moving the image to GPU, Flipping the image horizontally
+	~Reordering the cannels, Moving the image to GPU, Flipping the image horizontally, Adding a batch dimension with length 1
+}
+
+::ImageNet - 5::What is the purpose of normalizing the pixel values of an image when training a model on ImageNet in PyTorch?{
+~To make the images easier to visualize
+~To reduce the dimensionality of the images
+~To make the network converge faster during training
+=To ensure that the pixel values have a similar scale and distribution across all images being fed to the network.
+}
+
+::ImageNet - 6::What are the mean and standard deviation values used for normalizing the pixel values of an image in PyTorch when training on ImageNet?{
+~Mean \= 0, Standard deviation \= 1
+~Mean \= 0.5, Standard deviation \= 0.5
+=Mean \= Imagenet's mean pixel value, Standard deviation \= Imagenet's standard deviation of pixel values for each channel.
+~Mean \= 1, Standard deviation \= 0.5
+}
+
+::ImageNet - 7::What is the purpose of <code>model \= torchvision.models.resnext50_32x4d(weights\='DEFAULT')</code> when loading a pre-trained ImageNet model in PyTorch?{
+=To instantiate a ResNet-50 model architecture with pre-trained weights on ImageNet.
+~To train a ResNet-50 model on ImageNet from scratch.
+~To save a ResNet-50 model's trained weights to a file.
+~To evaluate a ResNet-50 model's performance on a validation set.
+}
+
+::ImageNet - 8::What is the purpose of <code>criterion \= nn.CrossEntropyLoss()</code>?{
+=To declare the loss function for a batch of training data with multiple classes.
+~To declare the mean squared error loss function for a batch of training data.
+~To declare the binary cross-entropy loss function for a batch of training data.
+~To compute the top-1 accuracy of the model on a batch of validation data.
+}
+
+::ImageNet - 9::What is the purpose of the <code>loss.item()</code> line of code in the training loop of a PyTorch ImageNet model?{
+	~To compute the loss function for a batch of training data.
+	=To get the numerical value of the loss function as a Python scalar.
+	~To evaluate the performance of the model on a validation set.
+	~To back-propagate the loss through the model and compute the gradients of the loss with respect to the model parameters.
+}
+
+::ImageNet - 10::Which types of objects are labeled in the ImageNet dataset?{
+	~Only animals and plants.
+	~Only household items and furniture.
+	= A wide variety of objects including animals, plants, household items, vehicles, and more.
+	~Only vehicles and buildings.
+}

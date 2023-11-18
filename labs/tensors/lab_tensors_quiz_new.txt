@@ -1,0 +1,131 @@
+$CATEGORY: $course$/top/Tensors
+
+::Tensors - 1::Line of code used to create a PyTorch Gaussian tensor of size 16x1024\:{
+~<code>z \= torch.rand(16, 1024, 0, 1)</code>
+~<code>z \= torch.rand(16, 1024)</code>
+~<code>z \= torch.randn(16, 1024, 0, 1)</code>
+=<code>z \= torch.randn(16, 1024)</code>
+}
+
+::Tensors - 2::Line of code used to create a PyTorch int16 tensor out of <code>na</code>\:{
+=<code>it \= torch.ShortTensor(na)</code>
+~<code>it \= na.astype('short')</code>
+~<code>it \= na.astype('int')</code>
+~<code>it \= torch.IntTensor(na)</code>
+}
+
+::Tensors - 4::How can the ReLU operation be implemented in PyTorch for an in-place computation\:{
+~<code>v.clamp(min\=0)</code>
+~<code>v.abs_()</code>
+=<code>z.clamp_(min\=0)</code>
+~<code>v.abs()</code>
+}
+
+::Tensors - 5::Which of these options is equivalent to unsqueezing dimensions 0, 2 & 2 from a tensor 'A' of shape [2, 2]?\:{
+~<code>A \= A.view(1, 1, 2, 1, 2)</code>
+~<code>A \= A.view(2,2)</code>
+=<code>A \= A.view(1, 2, 1, 1, 2)</code>
+~<code>A \= A.view(1, 2, 2, 1, 1)</code>
+}
+
+::Tensors - 6::Can a scalar be represented as a tensor?\:{
+= Yes, a tensor is any k-dimensional structure, including matrices, vectors and scalars.
+~ No, a tensor must have at least two elements, being a vector the simplest version.
+~ No, a tensor must have at least 2 dimensions (a matrix, for example).
+~ Yes, a tensor is any 1 or 2-dimensional structure. That is matrices, vectors and scalars.
+}
+
+::Tensors - 7::How can I compute <code>c \= a + b</code> , being <code>a \= numpy.array([1,2,3])</code> and <code>b \= torch.tensor([1,2,3])</code>? Which is going to be the type of c?\:{
+~ Here, <code>a</code> is a List and <code>b</code> is a Tensor. So, first, I need to convert a to a tensor with <code>a = torch.tensor(a)</code>. After that, I can compute c = a + b and c is going to be a Tensor.
+= Here, <code>a</code> is a Numpy array and <code>b</code> is a Tensor. So, first, I need to convert a to a tensor with <code>a = torch.tensor(a)</code>. After that, I can compute <code>c = a + b</code> and c is going to be a Tensor.
+~ Here, <code>a</code> is a List and <code>b</code> is a Tensor. So, first, I need to convert <code>a</code> to a tensor with <code>a = torch.tensor(a)</code>. After that, I can compute <code>c = a + b</code> and c is going to be a List.
+~ Here, <code>a</code> is a Numpy array and <code>b</code> i a Tensor. So, I can directly compute <code>c = a + b</code> and c is going to be a List.
+}
+
+::Tensors - 8::What is the difference between torch.empty and torch.zeros?\:{
+= <code>torch.empty()</code> creates a tensor with uninitialized values, while <code>torch.zeros()</code> creates a tensor filled with zeros.
+~ <code>torch.empty()</code> creates a tensor with random values, while <code>torch.zeros()</code> creates a tensor filled with zeros.
+~ <code>torch.empty()</code> creates a tensor with ones, while <code>torch.zeros()</code> creates a tensor filled with zeros.
+~ <code>torch.empty()</code> creates a tensor with the same values as the previous tensor, while <code>torch.zeros()</code> creates a tensor filled with zeros.
+}
+
+::Tensors - 9::Can you concatenate two tensors with different dimensions? If so, how?\:{
+= Yes, tensors can be concatenated along any dimension, as long as the tensors can be reshaped or broadcasted to have compatible shapes.
+~ No, tensors with different dimensions cannot be concatenated.
+~ Yes, tensors can be concatenated, but only if they have the same number of dimensions.
+~ Yes, you can concatenate tensors with different dimensions by padding the smaller tensor with zeros to match the shape of the larger tensor.
+}
+
+::Tensors - 11::What is the difference between a CPU tensor and a GPU tensor in PyTorch?\:{
+~ A CPU tensor is faster than a GPU tensor.
+~ A CPU tensor is less memory-efficient than a GPU tensor.
+= A CPU tensor is stored in the computer's main memory, while a GPU tensor is stored in the graphics card's memory.
+~ There is no difference between a CPU tensor and a GPU tensor in PyTorch.
+}
+
+::Tensors - 12::How do you create a tensor *x* with dimensions (10, 4) filled with ones?\:{
+~ <code>x \= torch.zeros(10, 4)</code>
+~ <code>x \= torch.ones([10, 4])</code>
+= <code>x \= torch.ones(10, 4)</code>
+~ <code>x \= torch.zeros([10, 4])</code>
+}
+
+::Tensors - 13::How do you create a tensor *y* with dimensions (5, 5) filled with random values uniformly distributed between 0 and 1?\:{
+~ <code>y \= torch.randn(5, 5, 0, 1)</code>
+~ <code>y \= torch.rand(5, 5, 0, 1)</code>
+= <code>y \= torch.rand(5, 5)</code>
+~ <code>y \= torch.randn(5, 5)</code>
+}
+
+::Tensors - 14::What is the output of the following code?\:{
+~ A 2x3 tensor with values close to 2, but with a normal distribution with 1 mean due to the random values in the b variable.
+~ A 3x2 tensor with values close to 2, but with a normal distribution with 1 mean due to the random values in the c variable.
+= A 2x3 tensor with values close to 1, but with a normal distribution with 1 mean  due to the random values in the c variable.
+~ A 3x2 tensor with values close to 1, but with a normal distribution with 1 mean due to the random values in the b variable.\n
+<code>\n
+b \= torch.ones(2, 3)\n
+c \= torch.randn(2, 3)\n
+d \= b + c\n
+print(d)\n
+</code>\n
+}
+
+::Tensors - 15::What is the output of the following code?\:{
+~ A 2x2 tensor with values [[2, 3], [4, 5]].
+= A 2x2 tensor with values [[2, 4], [4, 6]].
+~ A 2x2 tensor with values [[3, 6], [3, 6]].
+~ A 2x2 tensor with values [[1, 2], [1, 2]].\n
+<code>\n
+a \= torch.tensor([[1, 2], [3, 4]])\n
+b \= torch.tensor([1, 2])\n
+c \= a + b\n
+print(c)\n
+</code>\n
+}
+
+::Tensors - 16::What is the output of the following code?\:{
+~ A tensor([1, 2, 3, 3, 2, 1]).
+= A tensor([1, 2, 3]).
+~ A tensor([3, 2, 1]).
+~ A tensor([1, 1, 2, 2, 3, 3]).\n
+<code>\n
+a \= torch.tensor([1, 2, 3])\n
+b \= a.view(3, 1)\n
+c \= b.view(1, 3)\n
+d \= c.view(-1)\n
+print(d)\n
+</code>\n
+}
+
+::Tensors - 17::What is the output of the following code?\:{
+~ A tensor([1, 2, 3, 3, 2, 1]).
+~ A tensor([1, 2, 3]).
+~ A tensor([1, 3, 1, 2, 1, 3]).
+= A tensor([1, 2, 3, 1, 2, 3]).\n
+<code>\n
+a \= torch.tensor([[1, 2, 3], [1, 2, 3]])\n
+b \= a.view(3, 2)\n
+c \= b.view(-1)\n
+print(c)\n
+</code>\n
+}
