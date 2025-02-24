@@ -1,6 +1,6 @@
 # Image Classification with a Multi-Layer Perceptron vs a Convolutional Neural Network
 
-[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_mlp_cnn_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/main/labs/mlp/lab_mlp_cnn_todo.ipynb)
+[![Jupyter Notebook](https://img.shields.io/badge/Jupyter-Notebook-green.svg)](./lab_mlp_cnn_todo.ipynb) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/telecombcn-dl/labs-all/blob/main/labs/mlp_cnn/lab_mlp_cnn_todo.ipynb)
 
 This notebook is a merged and updated version based on two notebooks initially developed for the [UPC School's Postgraduate in Artificial Intelligence with Deep Learning](https://www.talent.upc.edu/ing/estudis/formacio/curs/310400/postgrau-artificial-intelligence-deep-learning/) (2019). Both notebooks were originally created by [Santi Pascual](https://github.com/santi-pdp) and updated by various contributors.
 
