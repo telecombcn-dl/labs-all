@@ -1,0 +1,80 @@
+// Question 1
+What is the purpose of the 'NormalizeScale' transform when creating the 'GeometricShapesDataset'? {
+    ~To create graph edges using a kNN policy.
+    ~To increase the number of points in the point cloud.
+    ~To convert the mesh into a point cloud.
+    =To center and normalize the point cloud to the interval (-1, 1).
+}
+
+// Question 2
+The 'GeometricShapesDataset' class implemented in the notebook supports both kNN and radius proximity policies for graph construction. {F}
+
+// Question 3
+What is the role of `torch.max(x, 2, keepdim\=True)[0]` in the PointNet forward pass? {
+    ~To apply an affine transformation to the features.
+    ~To normalize the point features.
+    =To perform global max pooling across the points to get a global feature vector.
+    ~To select the k nearest neighbours.
+}
+
+// Question 4
+Which optimizer and loss function are specified for training the PointNet model in this lab? {
+    ~AdamW optimizer and NLLLoss
+    ~SGD optimizer and MSELoss
+    ~RMSprop optimizer and HingeLoss
+    =Adam optimizer and CrossEntropyLoss
+}
+
+// Question 5
+The PointNet model implemented in this lab has more trainable parameters than the GCN model. {T}
+
+// Question 6
+Voxel pooling is used to increase the number of points in a point cloud. {F}
+
+// Question 7
+In the context of this lab, what does the `pos` attribute of a PyTorch Geometric `Data` object represent? {
+    =A matrix containing the 3D coordinates of each point.
+    ~The ground-truth label for the shape.
+    ~The connectivity information between nodes.
+    ~The feature vector for each node.
+}
+
+// Question 8
+Why are 1D Convolutional layers (`Conv1d`) used to implement the Multi-Layer Perceptrons (MLPs) in the PointNet model? {
+    ~To perform temporal analysis on the point cloud sequence.
+    ~To capture local spatial relationships between neighboring points.
+    =To apply a shared linear transformation to each point's feature vector independently, which will increase the efficiency of the network.
+    ~Because they require less trainable parameters than `Linear` layers for point clouds.
+}
+
+// Question 9
+What is the main purpose of the `SamplePoints` transform when used when creating the dataset? {
+    =To create a fixed-size point cloud by sampling points uniformly from the mesh surface.
+    ~To reduce the number of features for each point.
+    ~To normalize the size and position of the 3D shapes.
+    ~To construct graph edges based on point proximity.
+}
+
+// Question 10
+How does the GCN model in the lab aggregate information from a node's neighbors? {
+    =Using `GCNConv` layers that update a node's features based on its neighbors' features.
+    ~Using a global max-pooling operation across all nodes.
+    ~By concatenating the features of the 5 nearest neighbors.
+    ~By applying a shared T-Net to the neighborhood.
+}
+
+// Question 11
+What is the role of `data.batch` when passed to `global_mean_pool(x, data.batch)` in the GNN model's `Forward` method? {
+    =It's a tensor assigning each node to its respective graph in the batch, enabling batched graph-level pooling.
+    ~It specifies the total number of graphs in the current batch.
+    ~It provides the edge indices for pooling neighborhood information.
+    ~It normalizes the node features `x` before pooling.
+}
+
+// Question 12
+In the GNN model's `Forward` method, a line like `x \= self.conv1(data.x, data.edge_index)` is used. What are the typical roles of `data.x` and `data.edge_index` here? {
+    ~`data.x` is the adjacency matrix and `data.edge_index` provides batch information.
+    =`data.x` is a tensor of node features, and `data.edge_index` defines graph connectivity (edges).
+    ~`data.x` contains edge features and `data.edge_index` contains node coordinates.
+    ~`data.x` contains global graph features and `data.edge_index` contains node labels.
+}
