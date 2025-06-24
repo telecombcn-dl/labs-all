@@ -1,0 +1,102 @@
+// Question 1
+What is the primary advantage of 3D vision over 2D vision for machines? {
+    ~It requires less computational power.
+    ~It simplifies data processing due to standardized formats.
+    ~It is less affected by lighting conditions.
+    =It captures depth and spatial relationships, enabling more accurate understanding and interaction with the real world.
+}
+
+// Question 2
+The pinhole camera model allows for the full recovery of 3D information from a single 2D image. {FALSE}
+
+// Question 3
+What type of camera parameters describe the camera's pose (position and orientation) in the 3D world coordinate system? {
+    ~Focal length
+    =Extrinsic parameters
+    ~Principal point
+    ~Intrinsic parameters
+}
+
+// Question 4
+Which of the following 3D data types represents 3D space as a collection of discrete cubes, similar to pixels in 2D? {
+    ~Depth Maps
+    ~Meshes
+    ~Point Clouds
+    =Voxels
+}
+
+// Question 5
+Compared to 2D images, 3D data is generally characterized by more regular structures and higher density. {FALSE}
+
+// Question 6
+In Multi-view CNNs for 3D, what is the purpose of the “view pooling” step? {
+    ~To project the 3D model into multiple 2D views.
+    ~To select the single best 2D view for classification.
+    ~To train a separate CNN for each 2D view independently.
+    =To aggregate features extracted from multiple 2D views into a comprehensive shape descriptor.
+}
+
+// Question 7
+3D CNNs using voxel representations are computationally efficient and have low memory requirements due to the direct application of convolution on spatial data. {FALSE}
+
+// Question 8
+What fundamental property of point clouds does PointNet address through the use of symmetric functions? {
+    ~The sparsity of point data.
+    ~The presence of noise in point coordinates.
+    ~The need for geometric transformation invariance.
+    =The unordered nature of the point set.
+}
+
+// Question 9
+What is the main function of the T-Net component in the PointNet architecture? {
+    ~To aggregate global features using max pooling.
+    ~To upsample point features for dense prediction tasks.
+    =To predict and apply a canonical transformation to the input data or features for alignment.
+    ~To perform semantic segmentation of the point cloud.
+}
+
+// Question 10
+A significant limitation of the original PointNet architecture is its difficulty in\: {
+    ~Maintaining invariance to point permutations.
+    =Capturing local context and spatial relationships between points.
+    ~Scaling to a small number of parameters.
+    ~Processing unordered point sets directly.
+}
+
+// Question 11
+Graph Neural Networks (GNNs) are primarily designed for regularly structured 3D data like voxels. {FALSE}
+
+// Question 12
+Neural Radiance Fields (NeRF) represent a 3D scene by training a Multi-Layer Perceptron (MLP) to map 3D coordinates and viewing directions to color and volume density. {TRUE}
+
+// Question 13
+What do the intrinsic camera parameters matrix describe? {
+    ~The camera’s position in the world
+    =The internal geometric and optical properties of the camera
+    ~The lighting conditions
+    ~The number of shoots per second
+}
+
+// Question 14
+How does the hierarchical structure of PointNet++ primarily address the main limitation of the original PointNet? {
+    ~By converting the point cloud into a dense voxel grid before processing.
+    ~By processing each point in a fixed, canonical order to create a regular structure.
+    =By capturing local geometric features at multiple scales, which PointNet approach misses.
+    ~By using a single, more powerful T-Net for global transformation invariance.
+}
+
+// Question 15
+When representing a point cloud as a graph, the 'k-nearest neighbors (k-NN)' policy for creating edges connects a node to.... {
+    ~the nodes that were adjacent in the original data acquisition order.
+    =a fixed number (k) of its closest neighbors, regardless of how far away they are.
+    ~a fixed number (k) nodes within a specified distance.
+    ~a fixed number (k) random nodes, regardless of how far away they are.
+}
+
+// Question 16
+What is the fundamental purpose of the 'message passing' step in a Graph Neural Network for 3D data? {
+    ~To translate the final graph into a global feature vector for classification.
+    ~To determine which points in the cloud should be connected by edges.
+    ~To reduce the total number of nodes in the graph for efficiency.
+    =To allow each node (point) to aggregate features from its local neighbors, learning from its local context.
+}
